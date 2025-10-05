@@ -57,6 +57,21 @@ app.get('/messages/:messageId', async (req, res) => {
     })
   }
 })
+
+// a route for data for the About Us page
+app.get('/api/about-data', (req, res) => {
+  res.json({
+    title: "About Us",
+    intro: "Our team here at COMPANY is composed of one person (and whoever made the template that was in the repo). Our singular employee Sunil Parab is a Junior at New York University double majoring in Game Design and Computer Science. He isn't sure what exactly to write in this section of the website, but he's trying his best and that's what really matters. Hopefully he finds an intership this summer and eventually a job so he can do more in the future than write a paragraph that one other person will read.",
+    body: "We at COMPANY hope you enjoy your time at out site. Feel free to leave a message on our message board which nobody else will look at!",
+    images:
+    {
+      link: "photo.jpg",
+      size: "579x772"
+    }
+  })
+})
+
 // a route to handle logging out users
 app.post('/messages/save', async (req, res) => {
   // try to save the message to the database
